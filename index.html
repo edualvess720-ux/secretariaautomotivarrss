@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ADCOS Dermocosméticos — Skincare Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#060606;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#d4af3718 0%,transparent 70%);
+    top:-250px;
+    right:-180px;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#ffffff10 0%,transparent 70%);
+    bottom:-300px;
+    left:-220px;
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    max-width:1380px;
+    margin:auto;
+    padding:24px;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 35px;
+    background:#0e0e0e;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    margin-bottom:24px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.logo span{
+    color:#d4af37;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#b4b4b4;
+    transition:.3s;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,#0b0b0b,#141414);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:38px;
+    padding:95px 75px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    border-radius:999px;
+    background:#d4af3712;
+    border:1px solid #d4af3730;
+    color:#e7c766;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:32px;
+}
+
+.hero h1{
+    font-size:86px;
+    line-height:.95;
+    letter-spacing:-5px;
+    font-weight:900;
+    max-width:980px;
+    margin-bottom:28px;
+}
+
+.hero p{
+    max-width:860px;
+    color:#9ca3af;
+    font-size:21px;
+    line-height:1.9;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:48px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:18px 32px;
+    border-radius:16px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#d4af37;
+    color:#000;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 40px rgba(212,175,55,.25);
+}
+
+.btn-secondary{
+    background:#ffffff08;
+    border:1px solid rgba(255,255,255,.08);
+    color:#fff;
+}
+
+.btn-secondary:hover{
+    background:#ffffff12;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
+    margin-top:70px;
+}
+
+.feature{
+    background:#111;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:26px;
+    padding:34px;
+    transition:.3s;
+}
+
+.feature:hover{
+    transform:translateY(-7px);
+    border-color:#d4af3740;
+    box-shadow:0 15px 45px rgba(212,175,55,.08);
+}
+
+.feature-icon{
+    font-size:44px;
+    margin-bottom:18px;
+}
+
+.feature h3{
+    font-size:23px;
+    margin-bottom:14px;
+}
+
+.feature p{
+    color:#9ca3af;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.section{
+    margin-top:36px;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:34px;
+    padding:55px;
+}
+
+.section-title{
+    font-size:42px;
+    font-weight:900;
+    letter-spacing:-2px;
+    margin-bottom:38px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:26px;
+}
+
+.product{
+    background:#121212;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:28px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+    border-color:#d4af3740;
+    box-shadow:0 18px 45px rgba(212,175,55,.08);
+}
+
+.product-image{
+    height:280px;
+    background:linear-gradient(145deg,#171717,#0d0d0d);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:70px;
+}
+
+.product-content{
+    padding:30px;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#d4af3712;
+    border:1px solid #d4af3730;
+    color:#e7c766;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:16px;
+}
+
+.product h3{
+    font-size:24px;
+    line-height:1.5;
+    margin-bottom:16px;
+}
+
+.product p{
+    color:#9ca3af;
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+.price{
+    font-size:34px;
+    font-weight:900;
+    margin-bottom:24px;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#71717a;
+    font-size:18px;
+    margin-left:10px;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+}
+
+.category{
+    position:relative;
+    overflow:hidden;
+    min-height:240px;
+    border-radius:28px;
+    padding:34px;
+    background:linear-gradient(145deg,#151515,#0d0d0d);
+    border:1px solid rgba(255,255,255,.06);
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-7px);
+    border-color:#d4af3740;
+}
+
+.category h3{
+    font-size:28px;
+    margin-bottom:14px;
+}
+
+.category p{
+    color:#a1a1aa;
+    line-height:1.8;
+}
+
+.glow{
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:#d4af3710;
+    right:-90px;
+    bottom:-90px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+}
+
+.info{
+    background:#111;
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    padding:30px;
+}
+
+.info span{
+    display:block;
+    color:#e7c766;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.info h4{
+    line-height:1.8;
+    color:#f3f4f6;
+}
+
+.footer{
+    margin-top:38px;
+    padding:50px 20px;
+    text-align:center;
+    color:#71717a;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+@media(max-width:768px){
+
+    .nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero{
+        padding:55px 30px;
+    }
+
+    .hero h1{
+        font-size:50px;
+        line-height:1;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .section{
+        padding:32px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav class="nav">
+
+        <div class="logo">
+            ADCOS<span>.</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Skincare</a>
+            <a href="#">Protetores</a>
+            <a href="#">Anti-Idade</a>
+            <a href="#">Dermocosméticos</a>
+            <a href="#">Lançamentos</a>
+        </div>
+
+    </nav>
+
+    <section class="hero">
+
+        <div class="badge">
+            ● DERMOCOSMÉTICOS PREMIUM • CIÊNCIA • PERFORMANCE
+        </div>
+
+        <h1>
+            SKINCARE<br>
+            PREMIUM PARA<br>
+            RESULTADOS REAIS.
+        </h1>
+
+        <p>
+            Dermocosméticos desenvolvidos com alta tecnologia para cuidados faciais,
+            proteção solar, rejuvenescimento e tratamento avançado da pele.
+            Fórmulas premium criadas para performance clínica e rotina diária.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="https://www.lojaadcos.com.br/" target="_blank" class="btn btn-primary">
+                ACESSAR LOJA
+            </a>
+
+            <a href="https://www.lojaadcos.com.br/protetor-solar" target="_blank" class="btn btn-secondary">
+                VER PROTETORES
+            </a>
+
+        </div>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">☀️</div>
+
+                <h3>Proteção Solar</h3>
+
+                <p>
+                    Protetores solares com alta performance, toque seco e proteção diária.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">✨</div>
+
+                <h3>Anti-Idade</h3>
+
+                <p>
+                    Séruns, ácidos e ativos inteligentes para firmeza e rejuvenescimento.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">💎</div>
+
+                <h3>Skincare Premium</h3>
+
+                <p>
+                    Fórmulas avançadas para hidratação, luminosidade e uniformização da pele.
+                </p>
+
+            </div>
+
+            <div class="feature">
+
+                <div class="feature-icon">🧬</div>
+
+                <h3>Tecnologia Dermatológica</h3>
+
+                <p>
+                    Produtos desenvolvidos com inovação científica e eficácia comprovada.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            CATEGORIAS EM DESTAQUE
+        </h2>
+
+        <div class="categories">
+
+            <div class="category">
+                <div class="glow"></div>
+
+                <h3>☀️ Protetor Solar</h3>
+
+                <p>
+                    Alta proteção UVA/UVB com acabamento sofisticado e confortável.
+                </p>
+
+            </div>
+
+            <div class="category">
+                <div class="glow"></div>
+
+                <h3>✨ Anti-Idade</h3>
+
+                <p>
+                    Ativos inteligentes para combater sinais de envelhecimento.
+                </p>
+
+            </div>
+
+            <div class="category">
+                <div class="glow"></div>
+
+                <h3>💧 Hidratação</h3>
+
+                <p>
+                    Produtos desenvolvidos para restaurar equilíbrio e luminosidade.
+                </p>
+
+            </div>
+
+            <div class="category">
+                <div class="glow"></div>
+
+                <h3>🧴 Limpeza Facial</h3>
+
+                <p>
+                    Rotina de limpeza premium para todos os tipos de pele.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            MAIS VENDIDOS
+        </h2>
+
+        <div class="products">
+
+            <div class="product">
+
+                <div class="product-image">
+                    ☀️
+                </div>
+
+                <div class="product-content">
+
+                    <div class="tag">
+                        BEST SELLER
+                    </div>
+
+                    <h3>
+                        Protetor Solar Fluid FPS 70
+                    </h3>
+
+                    <p>
+                        Alta proteção diária com textura leve e acabamento invisível.
+                    </p>
+
+                    <div class="price">
+                        R$129,90
+                        <span class="old-price">R$159,90</span>
+                    </div>
+
+                    <a href="https://www.lojaadcos.com.br/" target="_blank" class="btn btn-primary">
+                        VER PRODUTO
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+                    ✨
+                </div>
+
+                <div class="product-content">
+
+                    <div class="tag">
+                        ANTI-IDADE
+                    </div>
+
+                    <h3>
+                        Sérum Rejuvenescedor Intensivo
+                    </h3>
+
+                    <p>
+                        Tecnologia avançada para firmeza, luminosidade e renovação facial.
+                    </p>
+
+                    <div class="price">
+                        R$219,90
+                        <span class="old-price">R$279,90</span>
+                    </div>
+
+                    <a href="https://www.lojaadcos.com.br/" target="_blank" class="btn btn-primary">
+                        VER PRODUTO
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="product">
+
+                <div class="product-image">
+                    💧
+                </div>
+
+                <div class="product-content">
+
+                    <div class="tag">
+                        HIDRATAÇÃO PREMIUM
+                    </div>
+
+                    <h3>
+                        Creme Facial Ultra Hidratante
+                    </h3>
+
+                    <p>
+                        Nutrição intensa com toque sofisticado e absorção rápida.
+                    </p>
+
+                    <div class="price">
+                        R$189,90
+                        <span class="old-price">R$239,90</span>
+                    </div>
+
+                    <a href="https://www.lojaadcos.com.br/" target="_blank" class="btn btn-primary">
+                        VER PRODUTO
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2 class="section-title">
+            EXPERIÊNCIA PREMIUM
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info">
+
+                <span>Entrega Rápida</span>
+
+                <h4>
+                    Envio para todo Brasil com rastreamento e segurança.
+                </h4>
+
+            </div>
+
+            <div class="info">
+
+                <span>Pagamento Seguro</span>
+
+                <h4>
+                    Ambiente protegido e tecnologia avançada para compras online.
+                </h4>
+
+            </div>
+
+            <div class="info">
+
+                <span>Dermocosméticos</span>
+
+                <h4>
+                    Produtos desenvolvidos com alta performance dermatológica.
+                </h4>
+
+            </div>
+
+            <div class="info">
+
+                <span>Atendimento</span>
+
+                <h4>
+                    Suporte especializado para auxiliar sua rotina de skincare.
+                </h4>
+
+            </div>
+
+            <div class="info">
+
+                <span>Qualidade Premium</span>
+
+                <h4>
+                    Fórmulas sofisticadas com ativos modernos e tecnologia científica.
+                </h4>
+
+            </div>
+
+            <div class="info">
+
+                <span>Rotina Completa</span>
+
+                <h4>
+                    Limpeza, hidratação, proteção solar e tratamento facial avançado.
+                </h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="footer">
+
+        © 2026 ADCOS Dermocosméticos — Todos os direitos reservados.<br><br>
+
+        Desenvolvido para performance, branding premium e conversão.
+
+    </div>
+
+</div>
+
+</body>
+</html>
